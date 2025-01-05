@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-job-different-db
+spec:
+  template:
+    metadata:
+      labels:
+        app: rules_gen
+    spec:
+      containers:
+        - name: rules_gen
+          image: docker.io/gabriellimab522/rules_gen:1.0
+          env:
+            - name: DB_PATH
+              value: /app/dataset/2023_spotify_ds1.csv
+          volumeMounts:
+          - mountPath: /app/shared_volume
+            name: shared-volume
+          - mountPath: /app/dataset
+            name: dataset-volume
+      restartPolicy: Never
+      volumes:
+      - name: shared-volume
+        persistentVolumeClaim:
+          claimName: project2-pvc-gabrielbarros
+      - name: dataset-volume
+        hostPath:
+          path: /home/gabrielbarros/tp2_cloud/datasets
+          type: Directory
+  backoffLimit: 1
+      

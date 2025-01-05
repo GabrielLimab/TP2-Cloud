@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-service
+  namespace: gabrielbarros
+spec:
+  selector:
+    app: server-container
+  ports:
+  - name: http
+    protocol: TCP
+    port: 52022
+    targetPort: 52022
+  type: NodePort

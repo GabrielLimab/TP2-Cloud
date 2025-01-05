@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: gabrielbarros
+  name: project2-pvc-gabrielbarros
+spec:
+  storageClassName: default-storage-class-gabrielbarros
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      namespace: gabrielbarros

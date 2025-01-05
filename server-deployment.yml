@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server-container
+  template:
+    metadata:
+      labels:
+        app: server-container
+        namespace: gabrielbarros
+    spec:
+      containers:
+        - name: server-container
+          image: docker.io/gabriellimab522/server-container:1.0
+          ports:
+          - containerPort: 52022
+          volumeMounts:
+          - mountPath: /app/shared_volume
+            name: shared-volume
+      volumes:
+      - name: shared-volume
+        persistentVolumeClaim:
+          claimName: project2-pvc-gabrielbarros
