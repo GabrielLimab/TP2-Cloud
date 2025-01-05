@@ -9,7 +9,7 @@ spec:
         app: ml-container
     spec:
       containers:
-        - name: rules_gen
+        - name: ml-container
           image: docker.io/gabriellimab522/rules_gen:1.0
           env:
             - name: DB_PATH
