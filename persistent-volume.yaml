@@ -4,7 +4,7 @@ metadata:
   namespace: gabrielbarros
   name: project2-pvc-gabrielbarros
 spec:
-  storageClassName: default-storage-class
+  storageClassName: default-storage-class-gabrielbarros
   accessModes:
     - ReadWriteMany
   resources:
