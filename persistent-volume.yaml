@@ -13,4 +13,3 @@ spec:
   selector:
     matchLabels:
       namespace: gabrielbarros
-      type: hostpath
