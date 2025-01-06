@@ -2,15 +2,14 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   namespace: gabrielbarros
-  name: project2-pv2-gabrielbarros
-  labels:
-    type: local
+  name: project2-pvc-gabrielbarros
 spec:
-  capacity:
-    storage: 1Gi
   storageClassName: default-storage-class
   accessModes:
     - ReadWriteMany
-  persistentVolumeReclaimPolicy: Recycle
-  hostPath:
-    path: /home/gabrielbarros/project2-pv2
+  resources:
+    requests:
+      storage: 1Gi
+  selector:
+    matchLabels:
+      namespace: gabrielbarros
