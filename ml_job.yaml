@@ -2,6 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   generateName: ml-job-different-db-
+annotations:
+  argocd.argoproj.io/hook: PostSync 
 spec:
   template:
     metadata:
