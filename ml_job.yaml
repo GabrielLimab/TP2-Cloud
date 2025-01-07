@@ -1,9 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: ml-job-different-db-
-annotations:
-  argocd.argoproj.io/hook: PreSync
+  name: ml-job-different-db
 spec:
   template:
     metadata:
