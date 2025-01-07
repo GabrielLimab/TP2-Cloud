@@ -1,7 +1,8 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: ml-job-different-db-
+  # generateName: ml-job-different-db-
+  name: ml-job-different-db
 spec:
   template:
     metadata:
