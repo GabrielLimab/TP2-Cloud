@@ -21,3 +21,5 @@ frequent_itemsets_fp, rules_fp = fpgrowth(playlists, minSupRatio=minSupRatio, mi
 pickle_path = "/app/shared_volume/rules.pickle"
 with open(pickle_path, 'wb') as f:
     pickle.dump(rules_fp, f)
+
+print("New rules generated!")
