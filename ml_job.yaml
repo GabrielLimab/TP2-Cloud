@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: ml-job-different-db-1736256913
+  generateName: ml-job-different-db-
 spec:
   template:
     metadata:
@@ -13,7 +13,7 @@ spec:
           image: docker.io/gabriellimab522/rules_gen:1.0
           env:
             - name: DB_PATH
-              value: /app/dataset/2023_spotify_ds2.csv
+              value: /app/dataset/2023_spotify_ds1.csv
           volumeMounts:
           - mountPath: /app/shared_volume
             name: shared-volume
